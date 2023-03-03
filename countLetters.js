@@ -5,10 +5,10 @@ const assertEqual = function(actual, expected) {
     return console.log(`Assertion Failed: [actual] !== [expected]`);
   }
 };
-const countLetters = function("lighthouse in the house") {
+const countLetters = function(sentence) {
   const letterCounts = {};
 
-  for (let letter of lighthouse in the house) {
+  for (let letter of sentence) {
     if (letter !== ' ') {
       letter = letter.toLowerCase();
       if (letterCounts[letter]) {
@@ -18,6 +18,9 @@ const countLetters = function("lighthouse in the house") {
       }
     }
   }
-  console.log(letterCounts);
+
   return letterCounts;
 };
+const result = countLetters ("Lighthouse labs test thasia recife");
+console.log(result.e);
+assertEqual(result.e, 4);
