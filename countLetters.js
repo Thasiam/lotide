@@ -21,6 +21,6 @@ const countLetters = function(sentence) {
 
   return letterCounts;
 };
-const result = countLetters ("Lighthouse labs test thasia recife");
+const result = countLetters ("Lighthouse labs test recife");
 console.log(result.e);
 assertEqual(result.e, 4);
