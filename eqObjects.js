@@ -1,11 +1,11 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     return console.log(`Assertion Passed: ${actual} === ${expected}`);
   } else {
     return console.log(`Assertion Failed: ${actual} !== ${expected}`);
   }
 };
-const eqArrays = function(actual, expected) {
+const eqArrays = function (actual, expected) {
   if (actual.length !== expected.length) {
     return false;
   } else {
@@ -28,13 +28,14 @@ const eqObjects = function(obj1, obj2) {
   }
 
   for (let key of keys1) {
-      if(Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
-        if(!eqArrays(obj1[key], obj2[key])) return false
-      }
-
-      if (obj1[key] !== obj2[key]) {
+    if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
+      if (!eqArrays(obj1[key], obj2[key]))
         return false;
-      }
+    }
+
+    if (obj1[key] !== obj2[key]) {
+      return false;
+    }
   }
 
   return true;
@@ -42,8 +43,8 @@ const eqObjects = function(obj1, obj2) {
 
 /*TEST CODE*/
 
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
+assertEqual("Lighthouse Labs", "Bootcamp");
+assertEqual(1, 1);
 
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
